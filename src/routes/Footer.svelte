@@ -1,3 +1,7 @@
+<script>
+	import { visionImpairedMode } from '../store';
+</script>
+
 <footer
 	class="flex flex-col gap-40 w-full mt-60 pt-40 bg-zinc-800 text-slate-300 justify-center items-center"
 >
@@ -10,9 +14,9 @@
 	</div>
 
 	<div class="flex gap-30 justify-around w-10/12">
-		<div class="flex-1">
+		<div class="flex-1 flex flex-col">
 			<span>● STAY IN THE KNOW</span>
-			<input type="email" placeholder="Email Address" />
+			<input type="email" placeholder="Email Address" class="bg-transparent placeholder:text-slate-300 border-b py-5 focus:outline-none w-8/12" />
 		</div>
 
 		<div class="flex-1 flex w-max justify-between">
@@ -58,7 +62,7 @@
 
 	<div class="w-full bg-zinc-900">
 		<div
-			class="text-gray-500 w-10/12 flex justify-around font-bold text-xs h-[50px] items-center m-auto"
+			class={`text-gray-500 w-10/12 flex justify-around font-bold text-xs h-[50px] items-center m-auto ${$visionImpairedMode ? "text-white" : "text-gray-500"}`}
 		>
 			<span class="flex-1">BASIC/DEPT®, Inc 10 - 23©</span>
 			<span class="flex-1 text-center">EASY TO UNDERSTAND, IMPOSSIBLE TO IGNORE.™</span>
