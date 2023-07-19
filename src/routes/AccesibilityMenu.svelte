@@ -1,5 +1,5 @@
 <script lang="ts">
-	let isOpen: boolean = true;
+	let isOpen: boolean = false;
 
 	const handleAccessibilityMenu = () => {
 		const updateStatus = isOpen === true ? false : true;
@@ -80,10 +80,10 @@
 	>
 </button>
 
-<div>
+<div class="overflow-x-hidden">
 	{#if isOpen}
 		<div
-			class="bg-zinc-900 fixed top-0 text-slate-200 h-[90vh] w-10/12 md:w-4/12 p-4 m-4 z-[1000] rounded-xl overflow-y-auto"
+			class="bg-zinc-900 fixed top-0 text-slate-200 h-[90vh] w-11/12 md:w-7/12 xl:w-4/12 p-4 m-4 z-[1000] rounded-xl overflow-y-auto overflow-x-hidden"
 		>
 			<button on:click={handleAccessibilityMenu} aria-label="Close Accessibility Menu">
 				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 25 25"
@@ -98,7 +98,7 @@
 			</button>
 
 			<div class="flex flex-col gap-6">
-				<h1>Accessibility Adjustments</h1>
+				<h1 class="text-center">Accessibility Adjustments</h1>
 
 				<div class="flex gap-4 justify-between">
 					<button class="p-3 rounded-full bg-slate-100 text-zinc-800" aria-label="Reset Settings">
@@ -114,11 +114,11 @@
 					</button>
 				</div>
 
-				<div class="flex flex-col gap-5 w-full m-auto bg-slate-100 rounded-xl text-zinc-800 p-3">
+				<div class="flex flex-col gap-5 w-full m-auto bg-slate-100 rounded-xl text-zinc-800 p-3 overflow-x-auto">
 					<h2 class="text-xl">Choose the right accessibility profile for you</h2>
 
 					<div class="flex gap-5 justify-between">
-						<button class="text-lg">Button</button>
+						<button class="text-lg">Not Yet Implemented</button>
 
 						<div class="flex flex-col gap-4 flex-1 text-right">
 							<h4 class="text-lg font-bold">Seizure Safe Profile</h4>
@@ -160,7 +160,7 @@
 					</div>
 
 					<div class="flex gap-5 justify-between">
-						<button class="text-lg">Button</button>
+						<button class="text-lg">Not Yet Implemented</button>
 
 						<div class="flex flex-col gap-4 flex-1 text-right">
 							<h4 class="text-lg font-bold">Keyboard Navigation (Motor)</h4>
@@ -169,7 +169,7 @@
 					</div>
 
 					<div class="flex gap-5 justify-between">
-						<button class="text-lg">Button</button>
+						<button class="text-lg">Not Yet Implemented</button>
 
 						<div class="flex flex-col gap-4 flex-1 text-right">
 							<h4 class="text-lg font-bold">Blind Users (Screen Reader)</h4>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { news } from '$lib/data/news';
+	import FeaturedNew from '../components/FeaturedNew.svelte';
 
 	export let scrollValue: number;
 </script>
@@ -165,9 +166,9 @@
 		</div>
 	</section>
 
-	<section class="w-full pt-20">
+	<section class="w-full">
 		<div
-			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end  items-start base:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0"
+			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end  items-start base:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0 pt-20"
 		>
 			<div
 				class={`flex flex-col justify-start flex-1 w-max sm:w-[80%] lg:w-[50%] ${
@@ -212,24 +213,7 @@
 	<section class="w-full mt-20">
 		<ul class="flex flex-col gap-20 justify-between w-[90%] m-auto">
 			{#each news as featuredNew}
-				<li>
-					<article class="flex flex-col md:flex-row gap-5 items-start border-t border-t-black pt-5 relative overflow-x-auto overflow-y-hidden">
-						<picture class="shrink-0">
-							<img
-								class="h-auto w-full object-cover"
-								alt={featuredNew.alt}
-								src={featuredNew.imagesrc}
-								loading="lazy"
-							/>
-						</picture>
-
-						<div class="flex flex-col justify-between">
-							<h2 class="text-4xl font-bold -translate-y-2">{featuredNew.title}</h2>
-
-							<span class="absolute -bottom-10 lg:-bottom-1"><strong>PRESS</strong> {featuredNew.id}</span>
-						</div>
-					</article>
-				</li>
+				<FeaturedNew {featuredNew} />
 			{/each}
 		</ul>
 	</section>
