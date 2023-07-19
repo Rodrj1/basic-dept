@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { news } from "$lib/data/news";
-	
-	let scrollValue = 0;
+	import { news } from '$lib/data/news';
+
+	export let scrollValue: number;
 </script>
 
 <div
@@ -11,18 +11,23 @@
 			: 'bg-[#f4f4f4] text-black'
 	}`}
 >
-	<section class="w-full">
-		<div class="flex justify-between items-center border-t border-t-black w-[90%] m-auto">
-			<p class="flex-1 text-4xl text-black relative">
+	<section class="w-full flex flex-col gap-10 md:gap-0">
+		<div
+			class="flex flex-col sm:flex-row justify-between items-center border-t border-t-black w-[90%] m-auto"
+		>
+			<p class="flex-1 text-3xl sm:text-4xl md:text-5xl text-black relative">
 				<span class="text-5xl">BASIC/DEPT®</span>
 				is a global branding and digital design agency building products, services, and eCommerce experiences
 				that turn cultural values into company value.
 			</p>
 
-			<h1 class="text-[14rem] font-bold flex-1 relative">B/D ®</h1>
+			<span
+				class="text-8xl md:text-9xl lg:text-[14rem] font-bold flex-1 relative w-full sm:text-center"
+				>B/D ®</span
+			>
 		</div>
 
-		<div class="flex w-[90%] m-auto gap-5">
+		<div class="flex flex-col sm:flex-row w-[90%] m-auto gap-5">
 			<article class="flex-1 h-[60vh]">
 				<picture>
 					<img
@@ -82,12 +87,15 @@
 		</div>
 	</section>
 
-	<h1 class="text-6xl font-bold text-left w-[90%] m-auto mt-40">FEATURED</h1>
-	<h1 class="text-6xl font-bold text-left w-[90%] m-auto">ENGAGEMENTS</h1>
+	<h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-left w-[90%] m-auto mt-40">
+		FEATURED<br />ENGAGEMENTS
+	</h1>
 
-	<section class="w-full mt-40">
-		<div class="flex gap-10 justify-between h-[60vh] w-[90%] m-auto overflow-x-auto">
-			<div class="flex flex-col items-start justify-start flex-1 h-[100%]">
+	<section class="w-full mt-20 md:mt-40">
+		<div
+			class="flex gap-10 justify-between h-auto lg:h-[60vh] w-[90%] m-auto overflow-x-auto overflow-y-hidden"
+		>
+			<div class="flex flex-col items-start justify-start flex-1 min-w-[280px] h-[100%]">
 				<h1 class="font-bold text-4xl mb-24">Google</h1>
 
 				<h2 class="font-bold text-xl mb-5">GOOGLE</h2>
@@ -99,7 +107,7 @@
 				>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">KFC</h1>
 
@@ -113,7 +121,7 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">Wilson</h1>
 
@@ -127,7 +135,7 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">AT&T</h1>
 
@@ -141,7 +149,7 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">patagonia</h1>
 
@@ -158,13 +166,15 @@
 	</section>
 
 	<section class="w-full pt-20">
-		<div class="w-[90%] m-auto flex relative justify-end border-t border-t-black py-20">
+		<div
+			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end  items-start base:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0"
+		>
 			<div
-				class={`flex flex-col flex-1  ${
-					scrollValue >= 3767 && scrollValue <= 4252 && 'fixed top-[10%] left-[5%]'
-				} ${scrollValue > 4252 && 'absolute bottom-[0%] left-[0%] justify-end'}`}
+				class={`flex flex-col justify-start flex-1 w-max sm:w-[80%] lg:w-[50%] ${
+					scrollValue >= 3767 && scrollValue <= 4252 && 'lg:fixed lg:top-[10%] lg:left-[5%]'
+				} ${scrollValue > 4252 && 'lg:absolute lg:bottom-[0%] lg:left-[0%] justify-end'}`}
 			>
-				<h1 class={`text-9xl text-left font-sans font-bold`}>
+				<h1 class={`flex-1 text-left font-sans font-bold w-full text-4xl sm:text-6xl md:text-7xl`}>
 					BASIC/DEPT®<br />
 					HELPS<br />
 					BRANDS●<br />
@@ -177,12 +187,16 @@
 				>
 
 				<button
-					class="text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full"
+					class={`text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full ${
+						scrollValue >= 3767 && scrollValue <= 4652
+							? 'border border-[#f9cdcd]'
+							: 'border border-black'
+					}`}
 					aria-label="ABOUT US">ABOUT US</button
 				>
 			</div>
 
-			<video autoplay muted loop width="50%">
+			<video autoplay muted loop class="w-max sm:w-[80%] lg:w-[50%]">
 				<source
 					src="https://cdn.sanity.io/files/8nn8fua5/production/e4a840ba8dfeded08ac4d0ba6e930be56fc68e3b.mp4"
 					type="video/mp4"
@@ -191,13 +205,15 @@
 		</div>
 	</section>
 
-	<h1 class="text-6xl font-bold text-left w-[90%] m-auto mt-40">FEATURED<br /> NEWS</h1>
+	<h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-left w-[90%] m-auto mt-20 md:mt-40">
+		FEATURED<br />NEWS
+	</h1>
 
 	<section class="w-full mt-20">
 		<ul class="flex flex-col gap-20 justify-between w-[90%] m-auto">
 			{#each news as featuredNew}
 				<li>
-					<article class="flex gap-5 items-start border-t border-t-black pt-5 relative">
+					<article class="flex flex-col md:flex-row gap-5 items-start border-t border-t-black pt-5 relative overflow-x-auto overflow-y-hidden">
 						<picture class="shrink-0">
 							<img
 								class="h-auto w-full object-cover"
@@ -210,7 +226,7 @@
 						<div class="flex flex-col justify-between">
 							<h2 class="text-4xl font-bold -translate-y-2">{featuredNew.title}</h2>
 
-							<span class="absolute -bottom-1"><strong>PRESS</strong> {featuredNew.id}</span>
+							<span class="absolute -bottom-10 lg:-bottom-1"><strong>PRESS</strong> {featuredNew.id}</span>
 						</div>
 					</article>
 				</li>
@@ -218,5 +234,3 @@
 		</ul>
 	</section>
 </div>
-
-<svelte:window bind:scrollY={scrollValue} />

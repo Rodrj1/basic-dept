@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import '@fontsource/fira-mono';
+
+@layer base {
+	h1 {
+		@apply text-7xl
+	}
+}
 
 :root {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -15,31 +22,12 @@ html {
 	scroll-behavior: smooth;
 }
 
-h1,
-h2,
-p {
-	font-weight: 400;
-}
-
-p {
-	line-height: 1.5;
-}
-
 a {
 	text-decoration: none;
 }
 
 a:hover {
 	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
 }
 
 pre {
@@ -59,10 +47,4 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
 }

@@ -6,36 +6,38 @@
 		/>
 	</video>
 
-	<div class="flex gap-10 justify-around h-[80vh] mt-[110vh]">
-		<div class="flex flex-col items-center justify-center w-[350px] h-[100%]">
-			<h1 class="font-bold text-6xl">AdAge</h1>
+	<div class="flex gap-2 sm:gap-10 justify-around items-center h-[80vh] mt-[20vh] lg:mt-[110vh]">
+		<a href="/" class="flex flex-col items-center justify-center flex-1 h-[50%]">
+			<span class="font-bol text-based sm:text-2xl lg:text-6xl">AdAge</span>
 
 			<div class="flex flex-col mt-20">
-				<span class="font-bold text-xs">DESIGN AND BRANDING</span>
-				<span class="font-bold text-xs">AGENCY OF THE YEAR</span>
+				<span class="font-bold text-xs text-center"
+					>DESIGN AND BRANDING <br /> AGENCY OF THE YEAR</span
+				>
 			</div>
-		</div>
+		</a>
 
-		<div class="flex flex-col items-center justify-center w-[350px] h-[100%]">
+		<a href="/" class="flex flex-col items-center justify-center flex-1 h-[50%]">
 			<div class="flex flex-col items-start">
-				<span class="text-4xl">The</span>
-				<h1 class="font-bold text-4xl">WEBBY</h1>
-				<span class="text-4xl">AWARDS</span>
+				<span class="text-base sm:text-2xl lg:text-4xl text-center"
+					>The<br /><strong>WEBBY</strong><br />AWARDS</span
+				>
 			</div>
 
-			<span class="font-bold text-xs mt-20">AGENCY OF THE YEAR</span>
-		</div>
+			<span class="font-bold text-xs mt-20 text-center">AGENCY OF THE YEAR</span>
+		</a>
 
-		<div class="flex flex-col items-center justify-center w-[350px] h-[100%]">
+		<a href="/" class="flex flex-col items-center justify-center flex-1 h-[50%]">
 			<div class="flex flex-col items-end">
 				<span class="text-base">US</span>
-				<h1 class="font-bold text-5xl">campaign</h1>
+				<span class="font-bold text-base sm:text-2xl lg:text-5xl">campaign</span>
 			</div>
 
 			<div class="flex flex-col mt-20">
-				<span class="font-bold text-xs">DIGITAL INNOVATION AGENCY</span>
-				<span class="font-bold text-xs">OF THE YEAR FINALIST</span>
+				<span class="font-bold text-xs text-center"
+					>DIGITAL INNOVATION AGENCY<br />OF THE YEAR FINALIST</span
+				>
 			</div>
-		</div>
+		</a>
 	</div>
 </section>
