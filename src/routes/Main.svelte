@@ -1,12 +1,12 @@
 <section class="w-full">
-	<video autoplay muted loop class="absolute top-0 left-0">
+	<video autoplay muted loop>
 		<source
 			src="https://player.vimeo.com/external/416846654.hd.mp4?s=70f398e1d6c0e64be4d85a2de51648299a24e230"
 			type="video/mp4"
 		/>
 	</video>
 
-	<div class="flex gap-2 sm:gap-10 justify-around items-center h-[80vh] mt-[20vh] lg:mt-[110vh]">
+	<div class="flex gap-2 sm:gap-10 justify-around items-center h-[80vh]">
 		<a href="/" class="flex flex-col items-center justify-center flex-1 h-[50%]">
 			<span class="font-bol text-based sm:text-2xl lg:text-6xl">AdAge</span>
 

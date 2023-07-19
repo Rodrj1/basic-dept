@@ -11,7 +11,7 @@
 			: 'bg-[#f4f4f4] text-black'
 	}`}
 >
-	<section class="w-full flex flex-col gap-10 md:gap-0">
+	<section class="w-full flex flex-col gap-10">
 		<div
 			class="flex flex-col sm:flex-row justify-between items-center border-t border-t-black w-[90%] m-auto"
 		>

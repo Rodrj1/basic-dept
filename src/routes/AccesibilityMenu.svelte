@@ -1,5 +1,5 @@
 <script lang="ts">
-	let isOpen: boolean = false;
+	let isOpen: boolean = true;
 
 	const handleAccessibilityMenu = () => {
 		const updateStatus = isOpen === true ? false : true;
@@ -10,6 +10,14 @@
 
 	const handleVisionImpairedMode = () => {
 		visionImpairedMode.update((val) => !val);
+
+		const getAllElements = document.querySelectorAll('li, h1, a, p, h1 ,h2, h4, span');
+
+		if ($visionImpairedMode === true) {
+			getAllElements.forEach((elem) => elem.classList.add('scale-110'));
+		} else {
+			getAllElements.forEach((elem) => elem.classList.remove('scale-110'));
+		}
 	};
 
 	import { ADHDFriendlyMode } from '../store';
@@ -59,7 +67,7 @@
 
 <button
 	on:click={handleAccessibilityMenu}
-	class="fixed bottom-2 flex justify-center flex-col items-center m-1 bg-white rounded-full"
+	class="fixed bottom-2 flex justify-center flex-col items-center m-1 bg-white rounded-full hover:scale-110 transition-transform"
 	aria-label="Open Accessibility Menu"
 >
 	<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
@@ -75,7 +83,7 @@
 <div>
 	{#if isOpen}
 		<div
-			class="bg-zinc-900 fixed top-0 text-slate-200 h-[90vh] w-auto min-w-[40%] p-4 m-4 z-[1000] rounded-xl overflow-y-auto"
+			class="bg-zinc-900 fixed top-0 text-slate-200 h-[90vh] w-10/12 md:w-4/12 p-4 m-4 z-[1000] rounded-xl overflow-y-auto"
 		>
 			<button on:click={handleAccessibilityMenu} aria-label="Close Accessibility Menu">
 				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 25 25"
