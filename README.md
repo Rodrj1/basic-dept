@@ -1,5 +1,5 @@
 # README
-I made this mostly to learn about accessibility which BASIC DEPT has won awards for. Only the Home page has been recreated, as the others are not necessary for this purpose.
+I made this mostly to learn about accessibility which BASIC DEPT has won awards for. Only the Home page has been recreated, as the others are not necessary for this purpose. The initial video is a random video from the internet as I could not obtain the one in their page.
 
 ## LIVE
 [BASIC DEPT ATTEMPT](https://trainingbasicdept.netlify.app/)
