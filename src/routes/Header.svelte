@@ -28,24 +28,24 @@
 	</div>
 
 	<nav class={`hidden xl:flex justify-center z-lg relative`}>
-		<ul class="flex flex-col xl:flex-row justify-center gap-10 p-4">
+		<ul class="flex flex-col xl:flex-row justify-center gap-10 p-4 text-xl">
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home!</a>
+				<a href="/">HOME!</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About!</a>
+				<a href="/about">ABOUT!</a>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/news') ? 'page' : undefined}>
-				<a href="/">News</a>
+				<a href="/">NEWS</a>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/thinking') ? 'page' : undefined}>
-				<a href="/">Thinking</a>
+				<a href="/">THINKING</a>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/careers') ? 'page' : undefined}>
-				<a href="/">Careers</a>
+				<a href="/">CAREERS</a>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>
-				<a href="/">Contact</a>
+				<a href="/">CONTACT</a>
 			</li>
 		</ul>
 	</nav>
