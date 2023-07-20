@@ -63,6 +63,25 @@
 			getH4Headers.forEach((h4Header) => (h4Header.style.cssText = ''));
 		}
 	};
+
+	import { seizureSafeMode } from '../store';
+
+	const handleSeizureSafeMode = () => {
+		seizureSafeMode.update((val) => !val);
+		const getVideos = document.querySelectorAll('video');
+
+		if ($seizureSafeMode === true) {
+			getVideos.forEach((video) => {
+				video.pause();
+				video.classList.add('grayscale');
+			});
+		} else {
+			getVideos.forEach((video) => {
+				video.play();
+				video.classList.remove('grayscale');
+			});
+		}
+	};
 </script>
 
 <button
@@ -114,11 +133,15 @@
 					</button>
 				</div>
 
-				<div class="flex flex-col gap-5 w-full m-auto bg-slate-100 rounded-xl text-zinc-800 p-3 overflow-x-auto">
+				<div
+					class="flex flex-col gap-5 w-full m-auto bg-slate-100 rounded-xl text-zinc-800 p-3 overflow-x-auto"
+				>
 					<h2 class="text-xl">Choose the right accessibility profile for you</h2>
 
 					<div class="flex gap-5 justify-between">
-						<button class="text-lg">Not Yet Implemented</button>
+						<button on:click={handleSeizureSafeMode} class="text-lg"
+							>{$seizureSafeMode ? 'ON' : 'OFF'}</button
+						>
 
 						<div class="flex flex-col gap-4 flex-1 text-right">
 							<h4 class="text-lg font-bold">Seizure Safe Profile</h4>
