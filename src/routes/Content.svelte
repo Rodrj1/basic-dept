@@ -188,7 +188,7 @@
 				>
 
 				<button
-					class={`text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full ${
+					class={`text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full focus:bg-red-600 ${
 						scrollValue >= 3767 && scrollValue <= 4652
 							? 'border border-[#f9cdcd]'
 							: 'border border-black'

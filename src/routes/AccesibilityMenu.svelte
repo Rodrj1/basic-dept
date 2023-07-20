@@ -186,15 +186,6 @@
 						<button class="text-lg">Not Yet Implemented</button>
 
 						<div class="flex flex-col gap-4 flex-1 text-right">
-							<h4 class="text-lg font-bold">Keyboard Navigation (Motor)</h4>
-							<p class="text-gray-600 text-base font-serif">Use website with the keyboard</p>
-						</div>
-					</div>
-
-					<div class="flex gap-5 justify-between">
-						<button class="text-lg">Not Yet Implemented</button>
-
-						<div class="flex flex-col gap-4 flex-1 text-right">
 							<h4 class="text-lg font-bold">Blind Users (Screen Reader)</h4>
 							<p class="text-gray-600 text-base font-serif">Optimize website for screen-readers</p>
 						</div>
