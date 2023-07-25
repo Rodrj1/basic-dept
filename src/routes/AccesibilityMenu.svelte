@@ -82,6 +82,16 @@
 			});
 		}
 	};
+
+	const resetSettings = () => {
+		if ($seizureSafeMode === true) handleSeizureSafeMode();
+
+		if ($cognitiveDissabilityMode === true) handleCognitiveDisabilityMode();
+
+		if ($visionImpairedMode === true) handleVisionImpairedMode();
+
+		if ($ADHDFriendlyMode === true) handleADHDFriendlyMode();
+	};
 </script>
 
 <button
@@ -117,21 +127,16 @@
 			</button>
 
 			<div class="flex flex-col gap-6">
+				<span>Still in development</span>
 				<h1 class="text-center">Accessibility Adjustments</h1>
 
-				<div class="flex gap-4 justify-between">
-					<button class="p-3 rounded-full bg-slate-100 text-zinc-800" aria-label="Reset Settings">
-						Reset Settings
-					</button>
-
-					<button class="p-3 rounded-full bg-slate-100 text-zinc-800" aria-label="Statement">
-						Statement
-					</button>
-
-					<button class="p-3 rounded-full bg-slate-100 text-zinc-800" aria-label="Hide Interface">
-						Hide Interface
-					</button>
-				</div>
+				<button
+					on:click={resetSettings}
+					class="p-3 rounded-full bg-slate-100 text-zinc-800"
+					aria-label="Reset Settings"
+				>
+					Reset Settings
+				</button>
 
 				<div
 					class="flex flex-col gap-5 w-full m-auto bg-slate-100 rounded-xl text-zinc-800 p-3 overflow-x-auto"
