@@ -1,7 +1,7 @@
 <section class="w-full">
 	<video autoplay muted loop>
 		<source
-			src="https://player.vimeo.com/external/416846654.hd.mp4?s=70f398e1d6c0e64be4d85a2de51648299a24e230"
+			src="https://cdn.sanity.io/files/8nn8fua5/production/4c749533161fc77c899a376ec6cd6da38973772f.mp4"
 			type="video/mp4"
 		/>
 	</video>

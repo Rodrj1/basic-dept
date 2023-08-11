@@ -3,21 +3,26 @@
 	import Footer from './Footer.svelte';
 	import Main from './Main.svelte';
 
-	import { headerStyle } from '../store';
+	import { headerStyle, scrollValue } from '../store';
 	import { onMount } from 'svelte';
 
-	let scrollValue: number = 0;
 
 	onMount(() => {
+		let header = document.getElementById('header');
 		document.addEventListener('scroll', () => {
-			if (scrollValue < 800) {
-				headerStyle.set('bg-transparent text-white');
-			} else if (scrollValue >= 800 && scrollValue < 3566) {
-				headerStyle.set('bg-[#f4f4f4] text-black');
-			} else if (scrollValue >= 3566 && scrollValue <= 4667) {
-				headerStyle.set('bg-[#272624] text-[#f9cdcd]');
+			let hasOpacity = header?.classList.contains('opacity-0');
+			if ($scrollValue < 800) {
+				if (hasOpacity) headerStyle.set('group bg-transparent text-white opacity-0');
+				else headerStyle.set('group bg-transparent text-white opacity-100');
+			} else if ($scrollValue >= 800 && $scrollValue < 3466) {
+				if (hasOpacity) headerStyle.set('group bg-[#f4f4f4] text-black opacity-0');
+				else headerStyle.set('group bg-[#f4f4f4] text-black opacity-100');
+			} else if ($scrollValue >= 3466 && $scrollValue <= 4667) {
+				if (hasOpacity) headerStyle.set('group bg-[#252422ff] text-[#f9cdcd] opacity-0');
+				else headerStyle.set('group bg-[#252422ff] text-[#f9cdcd]  opacity-100');
 			} else {
-				headerStyle.set('bg-[#f4f4f4] text-black');
+				if (hasOpacity) headerStyle.set('group bg-[#f4f4f4] text-black opacity-0');
+				else headerStyle.set('group bg-[#f4f4f4] text-black opacity-100');
 			}
 		});
 	});
@@ -31,9 +36,9 @@
 <section class="w-12/12 bg-[#f4f4f4]">
 	<Main />
 
-	<Content {scrollValue} />
+	<Content />
 
 	<Footer />
 </section>
 
-<svelte:window bind:scrollY={scrollValue} />
+<svelte:window bind:scrollY={$scrollValue} />

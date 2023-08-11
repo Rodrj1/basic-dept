@@ -34,9 +34,7 @@
 	<main class="w-full h-auto">
 		<slot />
 	</main>
-
-	<div id="top" class="fixed top-0 w-full" />
-
+	
 	{#if $ADHDFriendlyMode}
 		<div id="firstOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0`} />
 

@@ -1,67 +1,81 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import { headerStyle } from '../store';
+	import { headerStyle, scrollValue } from '../store';
 
-	let navIsVisible: boolean = true;
+	let smallNavIsVisible: boolean = true;
 
 	const handleNavVisibility = () => {
-		const updateNavVisibility = navIsVisible === true ? false : true;
-		navIsVisible = updateNavVisibility;
+		const updateNavVisibility = smallNavIsVisible === true ? false : true;
+		smallNavIsVisible = updateNavVisibility;
 	};
+
+	$: color = $scrollValue >= 3466 && $scrollValue <= 4667
+			? 'after:bg-[#F9CDCC]'
+			: 'after:bg-[#000]'
+
 </script>
 
-<button
-	on:click={handleNavVisibility}
-	class={`fixed right-10 text-xl top-10 block xl:hidden z-[100] ${$headerStyle}`}>MENU</button
->
-
 <header
-	class={`flex items-center justify-between fixed z-50 transition-colors duration-100 w-full xl:h-[100px] ${
-		navIsVisible && 'h-[100vh]'
+	id="header"
+	class={`flex items-center justify-center fixed z-50 duration-500 w-full xl:h-[150px] pb-10 transition-all ${
+		smallNavIsVisible && 'h-[100vh]'
 	}  ${$page.url.pathname === '/' ? `${$headerStyle}` : 'text-black'}`}
 >
-	<div class="hidden xl:block w-[3em] h-[3em]">
-		<a class={'flex items-center justify-center w-full h-full'} href="https://kit.svelte.dev">
-			<img class="w-[2em] h-[2em] object-contain" src={logo} alt="SvelteKit" />
-		</a>
-	</div>
+	<nav class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
+		<a class="text-2xl font-bold font-sans" href="https://kit.svelte.dev"> BASIC/DEPT®</a>
 
-	<nav class={`hidden xl:flex justify-center z-lg relative`}>
-		<ul class="flex flex-col xl:flex-row justify-center gap-10 p-4 text-xl">
+		<ul class="flex flex-col xl:flex-row gap-20 p-4 text-xs font-sans font-medium">
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">HOME!</a>
+				<a class={color} href="/">WORK</a>
 			</li>
+
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">ABOUT!</a>
+				<a class={color} href="/about">ABOUT</a>
 			</li>
+
 			<li aria-current={$page.url.pathname.startsWith('/news') ? 'page' : undefined}>
-				<a href="/">NEWS</a>
+				<a class={color} href="/">NEWS</a>
 			</li>
+
 			<li aria-current={$page.url.pathname.startsWith('/thinking') ? 'page' : undefined}>
-				<a href="/">THINKING</a>
+				<a class={color} href="/">THINKING</a>
 			</li>
+
 			<li aria-current={$page.url.pathname.startsWith('/careers') ? 'page' : undefined}>
-				<a href="/">CAREERS</a>
+				<a class={color} href="/">CAREERS</a>
 			</li>
+
 			<li aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>
-				<a href="/">CONTACT</a>
+				<a class={color} href="/">CONTACT</a>
 			</li>
 		</ul>
+
+		<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 20 20"
+			><path
+				fill="currentColor"
+				d="M14 10.25a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0Zm-5 0a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0Zm-5 0a1.249 1.249 0 1 1 2.5 0a1.25 1.25 0 1 1-2.5 0Z"
+			/></svg
+		>
 	</nav>
 
-	{#if navIsVisible === true}
+	<button
+		on:click={handleNavVisibility}
+		class={`fixed right-10 text-xl top-[52px] block xl:hidden z-[110] ${$headerStyle}`}
+		>MENU
+	</button>
+
+	{#if smallNavIsVisible === true}
 		<nav
-			class={`flex xl:hidden justify-start text-lg absolute h-[100vh] bg-[#262420] w-full items-start p-12 z-[100]`}
+			class={`flex xl:hidden justify-start text-lg absolute h-[100vh] bg-[#262420] w-full items-start p-12 z-[100] transition-all`}
 		>
 			<ul
 				class="flex flex-col xl:flex-row justify-center gap-10 p-4 text-4xl text-[#f9cdcd] font-serif items-start"
 			>
 				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-					<a on:click={handleNavVisibility} href="/">HOME!</a>
+					<a on:click={handleNavVisibility} href="/">WORK</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-					<a on:click={handleNavVisibility} href="/about">ABOUT!</a>
+					<a on:click={handleNavVisibility} href="/about">ABOUT</a>
 				</li>
 				<li aria-current={$page.url.pathname.startsWith('/news') ? 'page' : undefined}>
 					<a href="/">NEWS</a>

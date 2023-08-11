@@ -1,14 +1,39 @@
 <script lang="ts">
 	import { news } from '$lib/data/news';
+	import { onMount } from 'svelte';
 	import FeaturedNew from '../components/FeaturedNew.svelte';
+	import { scrollValue } from '../store';
 
-	export let scrollValue: number;
+
+
+	onMount(() => {
+		document.body.addEventListener('wheel', checkScrollDirection);
+
+		let headerElement = document.getElementById("header")
+
+		function checkScrollDirection(event: any) {
+			if (checkScrollDirectionIsUp(event)) {
+				headerElement?.classList.add("opacity-100")
+				headerElement?.classList.remove("opacity-0")
+			} else {
+				headerElement?.classList.add("opacity-0")
+				headerElement?.classList.remove("opacity-100")
+			}
+		}
+
+		function checkScrollDirectionIsUp(event: any) {
+			if (event.wheelDelta) {
+				return event.wheelDelta > 0;
+			}
+			return event.deltaY < 0;
+		}
+	});
 </script>
 
 <div
 	class={`transition-colors duration-[500ms] ${
-		scrollValue >= 3566 && scrollValue <= 4667
-			? 'bg-[#272624] text-[#f9cdcd]'
+		$scrollValue >= 3466 && $scrollValue <= 4667
+			? 'bg-[#252422ff] text-[#f9cdcd]'
 			: 'bg-[#f4f4f4] text-black'
 	}`}
 >
@@ -96,25 +121,25 @@
 		<div
 			class="flex gap-10 justify-between h-auto lg:h-[60vh] w-[90%] m-auto overflow-x-auto overflow-y-hidden"
 		>
-			<div class="flex flex-col items-start justify-start flex-1 min-w-[280px] h-[100%]">
+			<div class="flex flex-col items-start justify-start flex-1 min-w-[450px] h-[100%]">
 				<h1 class="font-bold text-4xl mb-24">Google</h1>
 
 				<h2 class="font-bold text-xl mb-5">GOOGLE</h2>
 
-				<span class="text-base font-bold"
+				<span class="text-base font-serif"
 					>Our embedded partnership with Google is as deep as it gets. We're the lead creative
 					agency for Google Store and provide stragey, design, and prototyping to other divisions.
 					Learn more about or partnership here.</span
 				>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[450px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">KFC</h1>
 
 					<h2 class="font-bold text-xl mb-5">KFC</h2>
 
-					<span class="text-base font-bold"
+					<span class="text-base font-serif"
 						>An award-winning global, digital transformation engagement spanning eCommerce, mobile
 						app, and new drive thru experiences. Bringing KFC's brand story to life while making it
 						easier for customers to buy chicken. Learn more about our partnership here.</span
@@ -122,13 +147,13 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[450px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">Wilson</h1>
 
 					<h2 class="font-bold text-xl mb-5">WILSON</h2>
 
-					<span class="text-base font-bold"
+					<span class="text-base font-serif"
 						>A reimagining of Wilson's brand visual identity, and brand campaign, to support a new
 						product drop and the launch of the first brick and mortar retail location in ther
 						brand's 108-year history. Read our full case study here.</span
@@ -136,13 +161,13 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[450px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">AT&T</h1>
 
 					<h2 class="font-bold text-xl mb-5">AT&T</h2>
 
-					<span class="text-base font-bold"
+					<span class="text-base font-serif"
 						>Redesigning the digital flagship for the largest telcommunications company in the
 						world. Creating frictionless paths to purchase for a wide range of consumers across a
 						vast portfolio of products and services.</span
@@ -150,13 +175,13 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center justify-start flex-1 min-w-[280px] h-[100%]">
+			<div class="flex flex-col items-center justify-start flex-1 min-w-[450px] h-[100%]">
 				<div class="flex flex-col items-start">
 					<h1 class="font-bold text-4xl mb-24">patagonia</h1>
 
 					<h2 class="font-bold text-xl mb-5">PATAGONIA</h2>
 
-					<span class="text-base font-bold"
+					<span class="text-base font-serif"
 						>Ongoing partnership providing strategy, branding, experience design, and development
 						focused on bringing their mission and offerings to consumers through brand-led programs
 						and platforms. Read our full case study here.</span
@@ -168,14 +193,10 @@
 
 	<section class="w-full">
 		<div
-			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end  items-start base:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0 pt-20"
+			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end items-start base:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0 pt-20"
 		>
-			<div
-				class={`flex flex-col justify-start flex-1 w-max sm:w-[80%] lg:w-[50%] ${
-					scrollValue >= 3767 && scrollValue <= 4252 && 'lg:fixed lg:top-[10%] lg:left-[5%]'
-				} ${scrollValue > 4252 && 'lg:absolute lg:bottom-[0%] lg:left-[0%] justify-end'}`}
-			>
-				<h1 class={`flex-1 text-left font-sans font-bold w-full text-4xl sm:text-6xl md:text-7xl`}>
+			<div class="sticky flex flex-col flex-1 w-max sm:w-[80%] lg:w-[50%] top-0 justify-around md:h-[80vh]">
+				<h1 class={`flex-1 text-left font-sans font-bold w-full text-4xl sm:text-6xl md:text-[115px]`}>
 					BASIC/DEPT®<br />
 					HELPS<br />
 					BRANDS●<br />
@@ -189,7 +210,7 @@
 
 				<button
 					class={`text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full focus:bg-red-600 ${
-						scrollValue >= 3767 && scrollValue <= 4652
+						$scrollValue >= 3667 && $scrollValue <= 4652
 							? 'border border-[#f9cdcd]'
 							: 'border border-black'
 					}`}

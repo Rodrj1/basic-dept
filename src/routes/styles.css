@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@fontsource/fira-mono';
-
 @layer base {
 	h1 {
 		@apply text-7xl
 	}
+
+	a {
+		@apply relative after:transition-all after:content-[''] after:absolute after:h-[1px] after:w-[0%] after:left-0 after:bottom-[-5px] hover:after:w-[100%] hover:outline-none no-underline after:bg-inherit
+	}
 }
 
 :root {
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family: sans-serif;
 	overflow-x: hidden;
 }
 
@@ -25,10 +27,6 @@ html {
 
 a {
 	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 pre {
