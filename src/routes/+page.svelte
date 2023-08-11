@@ -1,11 +1,9 @@
 <script lang="ts">
 	import Content from './Content.svelte';
-	import Footer from './Footer.svelte';
 	import Main from './Main.svelte';
 
 	import { headerStyle, scrollValue } from '../store';
 	import { onMount } from 'svelte';
-
 
 	onMount(() => {
 		let header = document.getElementById('header');
@@ -37,8 +35,6 @@
 	<Main />
 
 	<Content />
-
-	<Footer />
 </section>
 
 <svelte:window bind:scrollY={$scrollValue} />

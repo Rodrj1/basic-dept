@@ -4,8 +4,6 @@
 	import FeaturedNew from '../components/FeaturedNew.svelte';
 	import { scrollValue } from '../store';
 
-
-
 	onMount(() => {
 		document.body.addEventListener('wheel', checkScrollDirection);
 
@@ -209,7 +207,7 @@
 				>
 
 				<button
-					class={`text-xs font-sans font-bold mt-24 w-max py-2 px-5 rounded-full focus:bg-red-600 ${
+					class={`text-xs font-sans font-medium mt-24 w-max py-1 px-7 rounded-full focus:bg-red-600 ${
 						$scrollValue >= 3667 && $scrollValue <= 4652
 							? 'border border-[#f9cdcd]'
 							: 'border border-black'

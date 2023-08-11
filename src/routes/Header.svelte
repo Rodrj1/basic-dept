@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { headerStyle, scrollValue } from '../store';
 
 	let smallNavIsVisible: boolean = true;
@@ -9,44 +8,83 @@
 		smallNavIsVisible = updateNavVisibility;
 	};
 
-	$: color = $scrollValue >= 3466 && $scrollValue <= 4667
-			? 'after:bg-[#F9CDCC]'
-			: 'after:bg-[#000]'
+	import { page } from '$app/stores';
 
+	$: color =
+		$scrollValue >= 3466 && $scrollValue <= 4667 && $page.url.pathname === "/"  ? 'after:bg-[#F9CDCC]' : 'after:bg-[#000]';
 </script>
 
 <header
 	id="header"
 	class={`flex items-center justify-center fixed z-50 duration-500 w-full xl:h-[150px] pb-10 transition-all ${
 		smallNavIsVisible && 'h-[100vh]'
-	}  ${$page.url.pathname === '/' ? `${$headerStyle}` : 'text-black'}`}
+	}  ${$page.url.pathname == '/' && `${$headerStyle}`} ${
+		$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'
+	} ${$page.url.pathname == '/work' && 'bg-[#fff]'}`}
 >
 	<nav class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
-		<a class="text-2xl font-bold font-sans" href="https://kit.svelte.dev"> BASIC/DEPT®</a>
+		<a class="text-2xl font-bold font-sans" href="/"> BASIC/DEPT®</a>
 
 		<ul class="flex flex-col xl:flex-row gap-20 p-4 text-xs font-sans font-medium">
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a class={color} href="/">WORK</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && 'after:bg-[#000]'
+					}						
+					`}
+					href="/work">WORK</a
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a class={color} href="/about">ABOUT</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && 'after:bg-[#000]'
+					}`}
+					href="/about">ABOUT</a
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname.startsWith('/news') ? 'page' : undefined}>
-				<a class={color} href="/">NEWS</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && 'after:bg-[#000]'
+					}`}
+					href="/">NEWS</a
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname.startsWith('/thinking') ? 'page' : undefined}>
-				<a class={color} href="/">THINKING</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && '!after:bg-[#000]'
+					}`}
+					href="/">THINKING</a
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname.startsWith('/careers') ? 'page' : undefined}>
-				<a class={color} href="/">CAREERS</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && 'after:bg-[#000]'
+					}`}
+					href="/">CAREERS</a
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>
-				<a class={color} href="/">CONTACT</a>
+				<a
+					class={`${color} 
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
+						$page.url.pathname == '/work' && 'after:bg-[#000]'
+					}`}
+					href="/">CONTACT</a
+				>
 			</li>
 		</ul>
 

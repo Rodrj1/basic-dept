@@ -1,18 +1,26 @@
 <script lang="ts">
+	import { ADHDFriendlyMode } from '../store';
+
 	import AccesibilityMenu from './AccesibilityMenu.svelte';
 	import Header from './Header.svelte';
-	import './styles.css';
+	import Footer from './Footer.svelte';
 
-	import { ADHDFriendlyMode } from '../store';
+	import './styles.css';
+	import { onMount } from 'svelte';
+
+	let firstOpacity: HTMLElement | null;
+	let secondOpacity: HTMLElement | null;
+
+	onMount(() => {
+		firstOpacity = document.getElementById('firstOpacity');
+		secondOpacity = document.getElementById('secondOpacity');
+	});
 
 	const updatePosition = (
 		event: MouseEvent & {
 			currentTarget: EventTarget & HTMLDivElement;
 		}
 	) => {
-		let firstOpacity = document.getElementById('firstOpacity');
-		let secondOpacity = document.getElementById('secondOpacity');
-
 		if (firstOpacity && secondOpacity) {
 			let mouseY = event.clientY - 60;
 			let windowHeight = window.innerHeight;
@@ -34,7 +42,7 @@
 	<main class="w-full h-auto">
 		<slot />
 	</main>
-	
+
 	{#if $ADHDFriendlyMode}
 		<div id="firstOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0`} />
 
@@ -42,4 +50,6 @@
 	{/if}
 
 	<AccesibilityMenu />
+
+	<Footer />
 </div>
