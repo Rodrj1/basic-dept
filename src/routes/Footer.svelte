@@ -5,9 +5,12 @@
 
 <footer
 	class={`flex flex-col gap-14 xl:gap-40 w-full mt-20 xl:mt-40 pt-20 xl:pt-40 justify-center items-center
-	${$page.url.pathname === '/about' && 'bg-[#f4f4f4] text-zinc-700'}
 	${$page.url.pathname === '/' && 'bg-zinc-800 text-slate-300'}
 	${$page.url.pathname === '/work' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/about' && 'bg-[#f4f4f4] text-zinc-700'}
+	${$page.url.pathname === '/news' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/careers' && 'bg-[#f4f4f4] text-zinc-700'}
+	${$page.url.pathname === '/contact' && 'bg-zinc-800 text-slate-300'}
 	`}
 >
 	<div class="flex flex-col xl:flex-row justify-around w-10/12 gap-10 xl:gap-0">

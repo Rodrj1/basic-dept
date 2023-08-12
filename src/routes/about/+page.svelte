@@ -11,7 +11,7 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="w-full bg-[#252422ff] text-[#f9cdcd] min-h-screen">
+<div class="w-full  text-[#f9cdcd] min-h-screen">
 	<section class="w-[90%] xl:min-h-[95vh] m-auto pt-40">
 		<h1
 			class="text-2xl xs:text-4xl sm:text-5xl base:text-6xl lg:text-7xl xl:text-[115px] font-bold"

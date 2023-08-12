@@ -12,7 +12,7 @@
 				<img
 					class="h-auto w-full object-cover"
 					alt={featuredNew.alt}
-					src={featuredNew.imagesrc}
+					src={featuredNew.image}
 					loading="lazy"
 				/>
 			</picture>
@@ -20,7 +20,9 @@
 			<div class="flex flex-col justify-between">
 				<h2 class="text-4xl font-bold -translate-y-2">{featuredNew.title}</h2>
 
-				<span class="absolute -bottom-1 lg:bottom-4"><strong>PRESS</strong> {featuredNew.id}</span>
+				<span class="absolute -bottom-1 lg:bottom-4"
+					><strong>{featuredNew.type}</strong> {featuredNew.date}</span
+				>
 			</div>
 		</a>
 	</article>

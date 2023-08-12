@@ -1,6 +1,7 @@
 type FeaturedNew = {
 	alt: string;
-	imagesrc: string;
+	image: string;
 	title: string;
-	id: string;
+	date: string;
+	type: string
 };

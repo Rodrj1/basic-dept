@@ -11,16 +11,29 @@
 	import { page } from '$app/stores';
 
 	$: color =
-		$scrollValue >= 3466 && $scrollValue <= 4667 && $page.url.pathname === "/"  ? 'after:bg-[#F9CDCC]' : 'after:bg-[#000]';
+		$scrollValue >= 3466 && $scrollValue <= 4667 && $page.url.pathname === '/'
+			? 'after:bg-[#F9CDCC]'
+			: 'after:bg-[#000]';
 </script>
 
 <header
 	id="header"
 	class={`flex items-center justify-center fixed z-50 duration-500 w-full xl:h-[150px] pb-10 transition-all ${
 		smallNavIsVisible && 'h-[100vh]'
-	}  ${$page.url.pathname == '/' && `${$headerStyle}`} ${
+	}  ${$page.url.pathname == '/' && `${$headerStyle}`}
+	 ${$page.url.pathname == '/work' && 'bg-[#f4f4f4]'} 
+	 ${
 		$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'
-	} ${$page.url.pathname == '/work' && 'bg-[#f4f4f4]'}`}
+	}
+	 
+	 ${
+		$page.url.pathname == '/news' && 'bg-[#f4f4f4]'
+	}
+	${$page.url.pathname == '/careers' && 'bg-[#252422ff] text-[#f9cdcd]'}
+	${
+		$page.url.pathname == '/contact' && 'bg-[#f4f4f4]'
+	}
+	`}
 >
 	<nav class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
 		<a class="text-2xl font-bold font-sans" href="/"> BASIC/DEPT®</a>
@@ -53,7 +66,7 @@
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
 					}`}
-					href="/">NEWS</a
+					href="/news">NEWS</a
 				>
 			</li>
 
@@ -73,7 +86,7 @@
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
 					}`}
-					href="/">CAREERS</a
+					href="/careers">CAREERS</a
 				>
 			</li>
 
@@ -83,7 +96,7 @@
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
 					}`}
-					href="/">CONTACT</a
+					href="/contact">CONTACT</a
 				>
 			</li>
 		</ul>

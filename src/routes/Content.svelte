@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { news } from '$lib/data/news';
+	import { news } from '$lib/data/featuredNews';
 	import { onMount } from 'svelte';
 	import FeaturedNew from '../components/FeaturedNew.svelte';
 	import { scrollValue } from '../store';
@@ -207,7 +207,7 @@
 				>
 
 				<button
-					class={`text-xs font-sans font-medium mt-24 w-max py-1 px-7 rounded-full focus:bg-red-600 ${
+					class={`text-xs font-sans font-medium mt-24 w-max py-1 px-7 rounded-full ${
 						$scrollValue >= 3667 && $scrollValue <= 4652
 							? 'border border-[#f9cdcd]'
 							: 'border border-black'
