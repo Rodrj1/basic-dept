@@ -5,12 +5,13 @@
 
 <footer
 	class={`flex flex-col gap-14 xl:gap-40 w-full mt-20 xl:mt-40 pt-20 xl:pt-40 justify-center items-center
-	${$page.url.pathname === '/' && 'bg-zinc-800 text-slate-300'}
-	${$page.url.pathname === '/work' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/' && 'bg-[#252422] text-slate-300'}
+	${$page.url.pathname === '/work' && 'bg-[#252422] text-slate-300'}
 	${$page.url.pathname === '/about' && 'bg-[#f4f4f4] text-zinc-700'}
-	${$page.url.pathname === '/news' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/news' && 'bg-[#252422] text-slate-300'}
+	${$page.url.pathname === '/thinking' && 'bg-[#f4f4f4] text-zinc-700'}
 	${$page.url.pathname === '/careers' && 'bg-[#f4f4f4] text-zinc-700'}
-	${$page.url.pathname === '/contact' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/contact' && 'bg-[#252422] text-slate-300'}
 	`}
 >
 	<div class="flex flex-col xl:flex-row justify-around w-10/12 gap-10 xl:gap-0">
@@ -76,11 +77,17 @@
 		</div>
 	</div>
 
-	<div class="w-full bg-zinc-900">
+	<div
+		class={`w-full ${$page.url.pathname === '/' && 'bg-zinc-900 text-gray-500'}
+	${$page.url.pathname === '/work' && 'bg-[#191918] text-gray-500'}
+	${$page.url.pathname === '/about' && 'bg-[#eaeaea] text-zinc-500'}
+	${$page.url.pathname === '/news' && 'bg-[#191918] text-gray-500'}
+	${$page.url.pathname === '/thinking' && 'bg-[#eaeaea] text-zinc-500'}
+	${$page.url.pathname === '/careers' && 'bg-[#eaeaea] text-zinc-500'}
+	${$page.url.pathname === '/contact' && 'bg-[#191918] text-gray-500'}`}
+	>
 		<div
-			class={`text-gray-500 w-10/12 flex flex-col xl:flex-row gap-2 xl:gap-0 justify-around font-bold text-xs min-h-[50px] items-center m-auto py-5 ${
-				$visionImpairedMode ? 'text-white' : 'text-gray-500'
-			}`}
+			class={` w-10/12 flex flex-col xl:flex-row gap-2 xl:gap-0 justify-around font-bold text-xs min-h-[50px] items-center m-auto py-5`}
 		>
 			<span class="flex-1">BASIC/DEPT®, Inc 10 - 23©</span>
 			<span class="flex-1 text-center">EASY TO UNDERSTAND, IMPOSSIBLE TO IGNORE.™</span>

@@ -18,21 +18,16 @@
 
 <header
 	id="header"
-	class={`flex items-center justify-center fixed z-50 duration-500 w-full xl:h-[150px] pb-10 transition-all ${
+	class={`flex items-center justify-center fixed z-50 w-full xl:h-[150px] pb-10 transition-all duration-[500ms] ${
 		smallNavIsVisible && 'h-[100vh]'
 	}  ${$page.url.pathname == '/' && `${$headerStyle}`}
 	 ${$page.url.pathname == '/work' && 'bg-[#f4f4f4]'} 
-	 ${
-		$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'
-	}
+	 ${$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'}
 	 
-	 ${
-		$page.url.pathname == '/news' && 'bg-[#f4f4f4]'
-	}
+	 ${$page.url.pathname == '/news' && 'bg-[#f4f4f4]'}
+	${$page.url.pathname == '/thinking' && 'bg-[#252422ff] text-[#f9cdcd]'}
 	${$page.url.pathname == '/careers' && 'bg-[#252422ff] text-[#f9cdcd]'}
-	${
-		$page.url.pathname == '/contact' && 'bg-[#f4f4f4]'
-	}
+	${$page.url.pathname == '/contact' && 'bg-[#f4f4f4]'}
 	`}
 >
 	<nav class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
@@ -41,10 +36,14 @@
 		<ul class="flex flex-col xl:flex-row gap-20 p-4 text-xs font-sans font-medium">
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a
-					class={`${color} 
+					class={`${color}
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
-						$page.url.pathname == '/work' && 'after:bg-[#000]'
-					}						
+						$page.url.pathname == '/work' && 'after:bg-[#000] after:w-[100%]'
+					}		
+					${$page.url.pathname == '/news' && 'after:bg-[#000]'}	
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd]'}	
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd]'}
+					${$page.url.pathname == '/contact' && 'after:bg-[#000]'}				
 					`}
 					href="/work">WORK</a
 				>
@@ -53,9 +52,17 @@
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a
 					class={`${color} 
-					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
-						$page.url.pathname == '/work' && 'after:bg-[#000]'
-					}`}
+					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd] after:w-[100%]'} 
+					
+					${$page.url.pathname == '/work' && 'after:bg-[#000] '}
+					
+					${$page.url.pathname == '/news' && 'after:bg-[#000]'}	
+					
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd]'}	
+					
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd] '}
+					
+					${$page.url.pathname == '/contact' && 'after:bg-[#000]'}`}
 					href="/about">ABOUT</a
 				>
 			</li>
@@ -65,7 +72,10 @@
 					class={`${color} 
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
-					}`}
+					}${$page.url.pathname == '/news' && 'after:bg-[#000] after:w-[100%]'}	
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd]'}	
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd]'}
+					${$page.url.pathname == '/contact' && 'after:bg-[#000]'}`}
 					href="/news">NEWS</a
 				>
 			</li>
@@ -75,8 +85,11 @@
 					class={`${color} 
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && '!after:bg-[#000]'
-					}`}
-					href="/">THINKING</a
+					}${$page.url.pathname == '/news' && 'after:bg-[#000]'}	
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd] after:w-[100%]'}	
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd]'}
+					${$page.url.pathname == '/contact' && 'after:bg-[#000]'}`}
+					href="/thinking">THINKING</a
 				>
 			</li>
 
@@ -85,7 +98,10 @@
 					class={`${color} 
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
-					}`}
+					}${$page.url.pathname == '/news' && 'after:bg-[#000]'}	
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd]'}	
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd] after:w-[100%]'}
+					${$page.url.pathname == '/contact' && 'after:bg-[#000]'}`}
 					href="/careers">CAREERS</a
 				>
 			</li>
@@ -95,7 +111,10 @@
 					class={`${color} 
 					${$page.url.pathname == '/about' && 'after:bg-[#f9cdcd]'} ${
 						$page.url.pathname == '/work' && 'after:bg-[#000]'
-					}`}
+					}${$page.url.pathname == '/news' && 'after:bg-[#000]'}	
+					${$page.url.pathname == '/thinking' && 'after:bg-[#f9cdcd]'}	
+					${$page.url.pathname == '/careers' && 'after:bg-[#f9cdcd]'}
+					${$page.url.pathname == '/contact' && 'after:bg-[#000] after:w-[100%]'}`}
 					href="/contact">CONTACT</a
 				>
 			</li>

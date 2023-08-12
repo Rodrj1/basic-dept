@@ -42,6 +42,7 @@
 	${$page.url.pathname === '/work' && 'bg-[#f4f4f4]'}
 	${$page.url.pathname === '/about' && 'bg-[#252422ff]'}
 	${$page.url.pathname === '/news' && 'bg-[#f4f4f4]'}
+	${$page.url.pathname === '/thinking' && 'bg-[#252422ff]'}
 	${$page.url.pathname === '/careers' && 'bg-[#252422ff]'}
 	${$page.url.pathname === '/contact' && 'bg-[#f4f4f4]'}
 	`}

@@ -14,7 +14,11 @@
 </script>
 
 <section class="flex justify-between mt-40 w-[90%] m-auto items-center">
-	<h1 class="text-2xl xs:text-4xl sm:text-5xl base:text-6xl lg:text-7xl xl:text-[115px] font-bold text-zinc-800">NEWS</h1>
+	<h1
+		class="text-2xl xs:text-4xl sm:text-5xl base:text-6xl lg:text-7xl xl:text-[115px] font-bold text-zinc-800"
+	>
+		NEWS
+	</h1>
 
 	<span class="text-9xl">●</span>
 </section>

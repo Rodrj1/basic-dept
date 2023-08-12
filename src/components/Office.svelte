@@ -13,9 +13,9 @@
 
 <article class="flex-1 w-full border-l border-black pl-4">
 	<div class="flex flex-col gap-5">
-		<figure>
+		<picture>
 			<img class="object-cover" src={office.image} alt={office.imageAlt} />
-		</figure>
+		</picture>
 
 		<article class="flex justify-between items-center">
 			<h5 class="text-lg xl:text-xl font-bold">{office.name}</h5>
