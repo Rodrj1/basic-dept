@@ -1,21 +1,26 @@
+<script>
+	import { awards } from '$lib/data/awards';
+	import Award from '../../components/Award.svelte';
+</script>
+
 <section
-	class="w-[92%] min-h-[90vh] m-auto font-sans font-medium border-b border-[#f9cdcd] flex flex-col gap-40"
+	class="w-[92%] min-h-[90vh] m-auto font-sans font-medium border-b border-[#f9cdcd] flex flex-col gap-32 relative"
 >
-	<div class="w-full pt-4 flex gap-52 justify-center">
-		<div class="flex-1 flex flex-col gap-10">
+	<div class="w-full pt-4 flex gap-0 xl:gap-52 justify-center flex-col xl:flex-row">
+		<div class="flex-1 flex flex-col gap-0 xl:gap-10">
 			<span>SEC.</span>
 
 			<h3 class="my-16 text-4xl">AWARDS</h3>
 		</div>
 
 		<div class="flex-[1.6] flex flex-col gap-10">
-			<span>/A</span>
+			<span class="top-10 xl:top-0 absolute xl:relative">/A</span>
 
-			<article class="flex flex-col gap-10 my-16">
-				<h5 class="text-4xl">
+			<article class="flex flex-col gap-5">
+				<p class="text-sm xs:text-xl xl:text-4xl xl:my-16">
 					While results are what matter most, we believe awards bring value and recognition to
 					organizations as well as individuals.
-				</h5>
+				</p>
 
 				<button
 					class="text-xs font-sans font-medium w-max py-1 px-7 rounded-full border border-[#f9cdcd]"
@@ -26,35 +31,17 @@
 
 		<!-- Needs to be flex and flex-col so the point goes to end of X axis -->
 		<div class="flex-[0.4] flex flex-col">
-			<span class="self-end">●</span>
+			<span class="self-end absolute xl:relative top-10 xl:top-0">●</span>
 		</div>
 	</div>
 
 	<ul class="text-9xl flex flex-col gap-5">
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">WEBBY AWARDS <span class="text-xl font-bold absolute">/145</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">ADWEEK <span class="text-xl font-bold absolute">/01</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">AWWWARDS <span class="text-xl font-bold absolute">/28</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">D&AD <span class="text-xl font-bold absolute">/01</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">ONE SHOW <span class="text-xl font-bold absolute">/05</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">THE FWA <span class="text-xl font-bold absolute">/09</span></a>
-		</li>
-		<li class="relative opacity-30 hover:opacity-100">
-			<a href="/">COMM ARTS <span class="text-xl font-bold absolute">/04</span></a>
-		</li>
+		{#each awards as award}
+			<Award {award} />
+		{/each}
 	</ul>
 
-	<div class="flex-[0.4] flex flex-col -translate-y-36">
-		<span class="self-end">SETTING STANDARDS OTHERS FOLLOW ●</span>
+	<div class="flex-[0.4] flex flex-col base:-translate-y-36">
+		<span class="text-sm xs:text-base self-end mb-4">SETTING STANDARDS OTHERS FOLLOW ●</span>
 	</div>
 </section>

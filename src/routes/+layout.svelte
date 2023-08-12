@@ -29,13 +29,19 @@
 			secondOpacity.style.height = windowHeight - mouseY - 120 + 'px';
 		}
 	};
+
+	import { page } from '$app/stores';
 </script>
 
 <div
 	on:mousemove={ADHDFriendlyMode ? updatePosition : null}
 	id="status"
 	role="status"
-	class="flex flex-col h-auto"
+	class={`flex flex-col h-auto 
+	${$page.url.pathname === '/' && 'bg-[#f4f4f4]'}
+	${$page.url.pathname === '/work' && 'bg-[#f4f4f4]'}
+	${$page.url.pathname === '/about' && 'bg-[#252422ff]'}
+	`}
 >
 	<Header />
 

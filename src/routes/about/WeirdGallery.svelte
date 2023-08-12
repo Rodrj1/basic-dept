@@ -8,7 +8,7 @@
 			/>
 		</figure>
 
-		<figure class="z-50  md:max-w-[70%] max-w-[50%] xl:max-w-[42%] absolute translate-x-[20%] translate-y-[27%] xl:translate-x-[20%] xl:translate-y-[38%]">
+		<figure class="z-50 hover:z-[100] md:max-w-[70%] max-w-[50%] xl:max-w-[42%] absolute translate-x-[20%] translate-y-[27%] xl:translate-x-[20%] xl:translate-y-[38%]">
 			<img
 				class="object-cover"
 				src="https://cdn.sanity.io/images/8nn8fua5/production/f249af15eb93ccb7f8a796bfd04002670ee49870-720x900.jpg?w=1280&fm=webp&q=65"
@@ -34,7 +34,7 @@
 	</div>
 
     
-    <p class="text-[#f9cdcd] font-medium font-sans text-sm h-[80vh] md:min-h-[150vh] w-max flex items-end xl:items-center">
+    <p class="text-[#f9cdcd] font-medium font-sans text-sm h-[80vh] md:min-h-[150vh] w-[90vw] justify-center sm:w-max sm:justify-start flex items-end xl:items-center">
         EASY TO UNDERSTAND.<br />
         IMPOSSIBLE TO IGNORE.™<br />
         BASIC/DEPT®, INC 10 - 23©

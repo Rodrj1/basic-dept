@@ -1,64 +1,73 @@
 <script lang="ts">
 	import { visionImpairedMode } from '../store';
+	import { page } from '$app/stores';
 </script>
 
 <footer
-	class="flex flex-col gap-14 base:gap-40 w-full mt-20 base:mt-40 pt-20 base:pt-40 bg-zinc-800 text-slate-300 justify-center items-center"
+	class={`flex flex-col gap-14 xl:gap-40 w-full mt-20 xl:mt-40 pt-20 xl:pt-40 justify-center items-center
+	${$page.url.pathname === '/about' && 'bg-[#f4f4f4] text-zinc-700'}
+	${$page.url.pathname === '/' && 'bg-zinc-800 text-slate-300'}
+	${$page.url.pathname === '/work' && 'bg-zinc-800 text-slate-300'}
+	`}
 >
-	<div class="flex flex-col base:flex-row justify-around w-10/12 gap-10 base:gap-0">
+	<div class="flex flex-col xl:flex-row justify-around w-10/12 gap-10 xl:gap-0">
 		<span class="text-3xl font-bold w-max flex-1">B/D®</span>
 
-		<p class="text-3xl font-bold w-auto flex-1">
-			We collaborate with ambitious brands and people.<br /> Let's build. biz@basicagency.com
+		<p class="text-xl xl:text-3xl font-medium font-sans w-auto flex-1">
+			We collaborate with ambitious brands and people.<br class="hidden xl:block" /> Let's build. biz@basicagency.com
 		</p>
 	</div>
 
-	<div class="flex flex-col base:flex-row gap-10 base:gap-0 justify-around w-10/12">
+	<div class="flex flex-col xl:flex-row gap-10 xl:gap-0 justify-around w-10/12">
 		<div class="flex-1 flex flex-col">
-			<span class="text-xl">● STAY IN THE KNOW</span>
+			<span class="text-base xl:text-xl font-medium font-sans">● STAY IN THE KNOW</span>
 			<input
 				type="email"
 				placeholder="Email Address"
-				class="bg-transparent placeholder:text-slate-300 border-b py-5 focus:outline-none w-8/12"
+				class={`bg-transparent border-b py-5 focus:outline-none w-8/12
+				${$page.url.pathname === '/about' && '				placeholder:text-zinc-700 border-zinc-700'}
+				${$page.url.pathname === '/' && '				placeholder:text-slate-300 border-slate-300'}
+				${$page.url.pathname === '/work' && '				placeholder:text-slate-300 border-slate-300'}
+				`}
 			/>
 		</div>
 
-		<div class="flex-1 flex flex-col gap-7 base:gap-0 base:flex-row w-max justify-between">
+		<div class="flex-1 flex flex-col gap-7 xl:gap-0 xl:flex-row w-max justify-between">
 			<div>
-				<h4 class="text-xl mb-7 font-mono">● SOCIAL</h4>
+				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● SOCIAL</h4>
 
-				<ul>
-					<li class="font-bold text-[13px]">Instagram</li>
-					<li class="font-bold text-[13px]">Twitter</li>
-					<li class="font-bold text-[13px]">Linkedin</li>
-					<li class="font-bold text-[13px]">Facebook</li>
+				<ul class="xl:font-bold text-[13px]">
+					<li>Instagram</li>
+					<li>Twitter</li>
+					<li>Linkedin</li>
+					<li>Facebook</li>
 				</ul>
 			</div>
 
 			<div>
-				<h4 class="text-xl mb-7 font-mono">● INITIATIVES</h4>
+				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● INITIATIVES</h4>
 
-				<ul>
-					<li class="font-bold text-[13px]">Crafted</li>
-					<li class="font-bold text-[13px]">Applied</li>
-					<li class="font-bold text-[13px]">Brandbeats</li>
-					<li class="font-bold text-[13px]">Moves</li>
-					<li class="font-bold text-[13px]">B®/Good</li>
+				<ul class="xl:font-bold text-[13px]">
+					<li>Crafted</li>
+					<li>Applied</li>
+					<li>Brandbeats</li>
+					<li>Moves</li>
+					<li>B®/Good</li>
 				</ul>
 			</div>
 
 			<div>
-				<h4 class="text-xl mb-7 font-mono">● OFFICES</h4>
+				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● OFFICES</h4>
 
-				<ul>
-					<li class="font-bold text-[13px]">San Diego - CA</li>
-					<li class="font-bold text-[13px]">New York - NY</li>
-					<li class="font-bold text-[13px]">Bay Area - CA</li>
-					<li class="font-bold text-[13px]">St.Louis - MO</li>
-					<li class="font-bold text-[13px]">Amsterdam - NL</li>
-					<li class="font-bold text-[13px]">London - EN</li>
-					<li class="font-bold text-[13px]">Berlin - GE</li>
-					<li class="font-bold text-[13px]">Argentina - AR</li>
+				<ul class="xl:font-bold text-[13px]">
+					<li>San Diego - CA</li>
+					<li>New York - NY</li>
+					<li>Bay Area - CA</li>
+					<li>St.Louis - MO</li>
+					<li>Amsterdam - NL</li>
+					<li>London - EN</li>
+					<li>Berlin - GE</li>
+					<li>Argentina - AR</li>
 				</ul>
 			</div>
 		</div>
@@ -66,7 +75,7 @@
 
 	<div class="w-full bg-zinc-900">
 		<div
-			class={`text-gray-500 w-10/12 flex flex-col base:flex-row gap-2 base:gap-0 justify-around font-bold text-xs min-h-[50px] items-center m-auto py-5 ${
+			class={`text-gray-500 w-10/12 flex flex-col xl:flex-row gap-2 xl:gap-0 justify-around font-bold text-xs min-h-[50px] items-center m-auto py-5 ${
 				$visionImpairedMode ? 'text-white' : 'text-gray-500'
 			}`}
 		>

@@ -20,7 +20,7 @@
 		smallNavIsVisible && 'h-[100vh]'
 	}  ${$page.url.pathname == '/' && `${$headerStyle}`} ${
 		$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'
-	} ${$page.url.pathname == '/work' && 'bg-[#fff]'}`}
+	} ${$page.url.pathname == '/work' && 'bg-[#f4f4f4]'}`}
 >
 	<nav class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
 		<a class="text-2xl font-bold font-sans" href="/"> BASIC/DEPT®</a>

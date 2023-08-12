@@ -31,7 +31,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="w-12/12 bg-[#f4f4f4]">
+<section class="w-12/12">
 	<Main />
 
 	<Content />
