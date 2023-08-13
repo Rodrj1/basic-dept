@@ -9,7 +9,7 @@
 	export let member: CardMember;
 </script>
 
-<article class="flex gap-4 lg:max-w-[450px] xl:max-w-[570px] 2xl:max-w-[650px] 3xl:max-w-[750px]">
+<article class="flex-1 flex gap-4">
 	<div class="flex flex-col gap-2 w-full">
 		<figure>
 			<img class="object-cover" src={member.image} alt={`${member.name}, role: ${member.role}`} />

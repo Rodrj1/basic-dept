@@ -41,10 +41,18 @@
 				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● SOCIAL</h4>
 
 				<ul class="xl:font-bold text-[13px]">
-					<li>Instagram</li>
-					<li>Twitter</li>
-					<li>Linkedin</li>
-					<li>Facebook</li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://www.instagram.com/basicagency/">Instagram</a>
+					</li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://twitter.com/basicagency">Twitter</a>
+					</li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://www.linkedin.com/company/basic-agency/">Linkedin</a>
+					</li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://www.facebook.com/basicagency">Facebook</a>
+					</li>
 				</ul>
 			</div>
 
@@ -52,11 +60,15 @@
 				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● INITIATIVES</h4>
 
 				<ul class="xl:font-bold text-[13px]">
-					<li>Crafted</li>
-					<li>Applied</li>
-					<li>Brandbeats</li>
-					<li>Moves</li>
-					<li>B®/Good</li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://experiencecrafted.com/">Crafted</a>
+					</li>
+					<li class="hover:underline"><a target="_blank" href="/thinking">Applied</a></li>
+					<li class="hover:underline"><a target="_blank" href="/thinking">Brandbeats</a></li>
+					<li class="hover:underline">
+						<a target="_blank" href="https://moves.basicagency.com/">Moves</a>
+					</li>
+					<li class="hover:underline"><a target="_blank" href="/news">B®/Good</a></li>
 				</ul>
 			</div>
 
@@ -64,14 +76,14 @@
 				<h4 class="text-base xl:text-xl mb-7 font-medium font-sans">● OFFICES</h4>
 
 				<ul class="xl:font-bold text-[13px]">
-					<li>San Diego - CA</li>
-					<li>New York - NY</li>
-					<li>Bay Area - CA</li>
-					<li>St.Louis - MO</li>
-					<li>Amsterdam - NL</li>
-					<li>London - EN</li>
-					<li>Berlin - GE</li>
-					<li>Argentina - AR</li>
+					<li class="hover:underline"><a target="_blank" href="/contact">San Diego - CA</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">New York - NY</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">Bay Area - CA</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">St.Louis - MO</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">Amsterdam - NL</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">London - EN</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">Berlin - GE</a></li>
+					<li class="hover:underline"><a target="_blank" href="/contact">Argentina - AR</a></li>
 				</ul>
 			</div>
 		</div>

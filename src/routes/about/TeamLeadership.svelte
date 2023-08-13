@@ -31,7 +31,7 @@
 
 	<ul class="flex gap-4 flex-wrap justify-start">
 		{#each team as member}
-			<li>
+			<li class="w-full sm:w-[48%]">
 				<CardMember {member} />
 			</li>
 		{/each}
