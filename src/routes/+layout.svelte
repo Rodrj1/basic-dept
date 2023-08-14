@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ADHDFriendlyMode } from '../store';
+	import { ADHDFriendlyMode, projectColletionIsOpen } from '../store';
 
 	import AccesibilityMenu from './AccesibilityMenu.svelte';
 	import Header from './Header.svelte';
@@ -31,6 +31,7 @@
 	};
 
 	import { page } from '$app/stores';
+	import ProjectCollection from './ProjectCollection.svelte';
 </script>
 
 <div
@@ -60,6 +61,8 @@
 	{/if}
 
 	<AccesibilityMenu />
+
+	<ProjectCollection />
 
 	<Footer />
 </div>

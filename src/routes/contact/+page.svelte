@@ -1,9 +1,14 @@
 <script>
 	import Follow from './Follow.svelte';
-import Offices from './Offices.svelte';
+	import Offices from './Offices.svelte';
 </script>
 
-<section class="w-[90%] m-auto mt-40">
+<svelte:head>
+	<title>Contact Us | BASIC/DEPT® | Digital Branding & Product Design Agency</title>
+	<meta name="description" content="Website trying to recreate BASIC/DEPT" />
+</svelte:head>
+
+<section class="w-[90%] m-auto mt-32 xl:mt-40">
 	<div class="flex flex-col-reverse xl:flex-row justify-between w-full relative gap-5">
 		<div class="flex-1 relative">
 			<figure>
@@ -23,13 +28,17 @@ import Offices from './Offices.svelte';
 					<article class="flex flex-col gap-4">
 						<h4 class="text-2xl">NEW BUSINESS</h4>
 
-						<span class="text-zinc-700 text-base font-sans font-medium underline">biz@basicagency.com</span>
+						<span class="text-zinc-700 text-base font-sans font-medium underline"
+							>biz@basicagency.com</span
+						>
 					</article>
 
 					<article class="flex flex-col gap-4">
 						<h4 class="text-2xl">PRESS</h4>
 
-						<span class="text-zinc-700 text-base font-sans font-medium underline">press@basicagency.com</span>
+						<span class="text-zinc-700 text-base font-sans font-medium underline"
+							>press@basicagency.com</span
+						>
 					</article>
 				</div>
 
@@ -76,5 +85,5 @@ import Offices from './Offices.svelte';
 
 	<Offices />
 
-    <Follow />
+	<Follow />
 </section>

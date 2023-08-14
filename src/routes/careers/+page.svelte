@@ -1,4 +1,11 @@
-<section class="w-[90%] m-auto mt-40 text-[#f9cdcd]">
+<svelte:head>
+	<title
+		>Design And Branding Jobs in San Diego, San Francisco, New York, and Remote | BASIC/DEPT® | Digital Branding & Product Design Agency</title
+	>
+	<meta name="description" content="Website trying to recreate BASIC/DEPT" />
+</svelte:head>
+
+<section class="w-[90%] m-auto mt-32 xl:mt-40 text-[#f9cdcd]">
 	<div class="flex flex-col xl:flex-row justify-between w-full relative">
 		<div class="flex-1 flex flex-col xl:sticky top-0 h-max">
 			<h1

@@ -13,7 +13,14 @@
 	};
 </script>
 
-<section class="flex justify-between mt-40 w-[90%] m-auto items-center">
+<svelte:head>
+	<title
+		>Branding & Experience Design News | BASIC/DEPT® | Digital Branding & Product Design Agency</title
+	>
+	<meta name="description" content="Website trying to recreate BASIC/DEPT" />
+</svelte:head>
+
+<section class="flex justify-between mt-20 xl:mt-40 w-[90%] m-auto items-center">
 	<h1
 		class="text-2xl xs:text-4xl sm:text-5xl base:text-6xl lg:text-7xl xl:text-[115px] font-bold text-zinc-800"
 	>
@@ -23,9 +30,9 @@
 	<span class="text-9xl">●</span>
 </section>
 
-<section class="w-full mt-40">
+<section class="w-full mt-12 xl:mt-40">
 	<ul
-		class="flex w-[90%] m-auto gap-14 text-sm font-sans font-medium text-gray-800 spacing mb-4 justify-end"
+		class="flex w-[90%] m-auto gap-14 text-sm font-sans font-medium text-gray-800 spacing mb-4 overflow-y-hidden overflow-x-scroll pb-4 sm:overflow-hidden sm:justify-end"
 	>
 		<li>
 			<button on:click={() => filterBy('')} class="filterButton relative"> VIEW ALL </button>

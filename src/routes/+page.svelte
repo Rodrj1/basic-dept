@@ -27,8 +27,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>BASIC/DEPT® | Digital Branding & Product Design Agency</title>
+	<meta name="description" content="Website trying to recreate BASIC/DEPT" />
 </svelte:head>
 
 <section class="w-12/12">

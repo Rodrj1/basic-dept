@@ -37,15 +37,22 @@
 >
 	<section class="w-full flex flex-col gap-10">
 		<div
-			class="flex flex-col sm:flex-row justify-between items-center border-t border-t-black w-[90%] m-auto gap-52 pt-20"
+			class="flex flex-col sm:flex-row justify-between items-center border-t border-t-black w-[90%] m-auto gap-5 xl:gap-52 pt-20"
 		>
-			<p
-				class="flex-[1.1] text-sm xs:text-2xl sm:text-3xl md:text-4xl text-black relative font-serif font-medium"
-			>
-				<span class="text-2xl xs:text-5xl">BASIC/DEPT®</span>
-				is a global branding and digital design agency building products, services, and eCommerce experiences
-				that turn cultural values into company value.
-			</p>
+			<div class="flex-[1.1] flex flex-col gap-5">
+				<p
+					class="text-sm xs:text-2xl sm:text-3xl md:text-4xl text-black relative font-serif font-medium"
+				>
+					<span class="text-2xl xs:text-5xl">BASIC/DEPT®</span>
+					is a global branding and digital design agency building products, services, and eCommerce experiences
+					that turn cultural values into company value.
+				</p>
+
+				<button
+					class="text-xs font-sans font-medium w-max py-1 px-7 rounded-full border border-black"
+					aria-label="See the work"><a href="/work">SEE THE WORK</a></button
+				>
+			</div>
 
 			<figure class="flex-[0.9]">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307 100"
@@ -124,7 +131,7 @@
 		</div>
 	</section>
 
-	<h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-left w-[90%] m-auto mt-40">
+	<h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-left w-[90%] m-auto mt-20 xl:mt-40">
 		FEATURED<br />ENGAGEMENTS
 	</h1>
 
@@ -259,7 +266,7 @@
 							? 'border border-[#f9cdcd]'
 							: 'border border-black'
 					}`}
-					aria-label="ABOUT US">ABOUT US</button
+					aria-label="ABOUT US"><a href="/about">ABOUT US</a></button
 				>
 			</div>
 

@@ -84,3 +84,17 @@ button:focus:not(:focus-visible) {
 .filterButtonPink::after {
 	background-color: #f9cdcd;
 }
+
+.draggableProjects.dragging {
+	scroll-behavior: auto;
+	cursor: grab;
+  }
+
+.project a {
+	pointer-events: all;
+}
+
+.removePointerEvents {
+	user-select: none;
+	pointer-events: none;
+}

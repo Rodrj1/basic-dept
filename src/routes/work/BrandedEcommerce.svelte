@@ -1,7 +1,7 @@
 <section
-	class="w-[90%] min-h-[80vh] m-auto flex gap-3 pt-3 pb-10 border-b border-black text-zinc-600"
+	class="w-[90%] min-h-[80vh] m-auto flex flex-col xl:flex-row gap-3 pt-3 pb-3 border-b border-black text-zinc-600"
 >
-	<article class="flex-1 border-r border-black pr-3">
+	<article class="flex-[0.33] xl:border-r xl:border-black pr-3">
 		<div class="flex justify-between font-bold font-sans text-lg">
 			<span>02</span>
 			<span>/ 04</span>
@@ -22,13 +22,14 @@
 		</div>
 	</article>
 
+	<div class="flex gap-3 flex-[0.66]">
 	<article class="flex-1 flex flex-col gap-5">
-		<figure>
-			<img
+		<picture>
+			<img class="object-cover"
 				src="https://cdn.sanity.io/images/8nn8fua5/production/5c3d1f967f375bd535943fa62b855ecce60fad4a-720x900.jpg?w=1024&fm=webp&q=65"
 				alt="Placeholder for RAD POWER BIKES"
 			/>
-		</figure>
+		</picture>
 
 		<h3 class="text-xl font-bold text-zinc-700">RAD POWER BIKES</h3>
 
@@ -38,12 +39,12 @@
 	</article>
 
 	<article class="flex-1 flex flex-col gap-5">
-		<figure>
-			<img
+		<picture>
+			<img class="object-cover"
 				src="https://cdn.sanity.io/images/8nn8fua5/production/931c4de4f3cbbeb30a5b65677a174f2980e44805-720x900.jpg?w=1024&fm=webp&q=65"
 				alt="Placeholder for PATAGONIA"
 			/>
-		</figure>
+		</picture>
 
 		<h3 class="text-xl font-bold text-zinc-700">PATAGONIA</h3>
 
@@ -51,4 +52,5 @@
 			>AN ECOMMERCE EXPERIENCE DRIVEN BY PATAGONIA'S BRAND MISSION.</span
 		>
 	</article>
+</div>
 </section>

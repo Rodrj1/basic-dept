@@ -6,7 +6,7 @@
 		/>
 	</video>
 
-	<div class="flex gap-2 sm:gap-10 justify-around items-center h-[80vh] ">
+	<div class="flex gap-2 sm:gap-10 justify-around items-center h-auto xl:h-[80vh] my-20 xl:my-0">
 		<a
 			href="/"
 			class="flex flex-col items-center justify-center flex-1 h-[50%]"

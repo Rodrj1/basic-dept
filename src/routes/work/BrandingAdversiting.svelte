@@ -1,7 +1,7 @@
 <section
-	class="w-[90%] min-h-[80vh] m-auto flex gap-3 pt-3 pb-10 border-b border-black text-zinc-600"
+	class="w-[90%] min-h-[80vh] m-auto flex flex-col xl:flex-row gap-3 pt-3 pb-3 border-b border-black text-zinc-600"
 >
-	<article class="flex-1 border-r border-black pr-3">
+	<article class="flex-[0.33] xl:border-r xl:border-black pr-3">
 		<div class="flex justify-between font-bold font-sans text-lg">
 			<span>03</span>
 			<span>/ 04</span>
@@ -22,34 +22,38 @@
 		</div>
 	</article>
 
-	<article class="flex-1 flex flex-col gap-5">
-		<figure>
-			<img
-				src="https://cdn.sanity.io/images/8nn8fua5/production/c6f1d68463270085c3efebec6f782038ce3500e9-720x900.png?w=1024&fm=webp&q=65"
-				alt="Placeholder for KFC MOTHER'S DAY"
-			/>
-		</figure>
+	<div class="flex gap-3 flex-[0.66]">
+		<article class="flex-1 flex flex-col gap-5">
+			<picture>
+				<img
+					class="object-cover"
+					src="https://cdn.sanity.io/images/8nn8fua5/production/c6f1d68463270085c3efebec6f782038ce3500e9-720x900.png?w=1024&fm=webp&q=65"
+					alt="Placeholder for KFC MOTHER'S DAY"
+				/>
+			</picture>
 
-		<h3 class="text-xl font-bold text-zinc-700">KFC MOTHER'S DAY</h3>
+			<h3 class="text-xl font-bold text-zinc-700">KFC MOTHER'S DAY</h3>
 
-		<span class="text-sm max-w-[350px] font-medium font-sans"
-			>KENTUCKY FRIED BUCKQUET -- A DIY ARRANGEMENT THAT COMBINES THE TWO THINGS MOM REALLY WANTS,
-			FLOWERS AND FRIED CHICKEN.</span
-		>
-	</article>
+			<span class="text-sm max-w-[350px] font-medium font-sans"
+				>KENTUCKY FRIED BUCKQUET -- A DIY ARRANGEMENT THAT COMBINES THE TWO THINGS MOM REALLY WANTS,
+				FLOWERS AND FRIED CHICKEN.</span
+			>
+		</article>
 
-	<article class="flex-1 flex flex-col gap-5">
-		<figure>
-			<img
-				src="https://cdn.sanity.io/images/8nn8fua5/production/4dde00f9283f402b7c6952add1731c68f5674a7f-720x900.png?w=1024&fm=webp&q=65"
-				alt="Placeholder for BRIXTON SS/22"
-			/>
-		</figure>
+		<article class="flex-1 flex flex-col gap-5">
+			<picture>
+				<img
+					class="object-cover"
+					src="https://cdn.sanity.io/images/8nn8fua5/production/4dde00f9283f402b7c6952add1731c68f5674a7f-720x900.png?w=1024&fm=webp&q=65"
+					alt="Placeholder for BRIXTON SS/22"
+				/>
+			</picture>
 
-		<h3 class="text-xl font-bold text-zinc-700">BRIXTON SS/22</h3>
+			<h3 class="text-xl font-bold text-zinc-700">BRIXTON SS/22</h3>
 
-		<span class="text-sm max-w-[350px] font-medium font-sans"
-			>A FRESH COLLAB WITH BRIXTON JUST IN TIME FOR SPRING.</span
-		>
-	</article>
+			<span class="text-sm max-w-[350px] font-medium font-sans"
+				>A FRESH COLLAB WITH BRIXTON JUST IN TIME FOR SPRING.</span
+			>
+		</article>
+	</div>
 </section>

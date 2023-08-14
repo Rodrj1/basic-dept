@@ -4,11 +4,12 @@
 	let smallNavIsVisible: boolean = false;
 
 	const handleNavVisibility = () => {
-		const updateNavVisibility = smallNavIsVisible === true ? false : true;
-		smallNavIsVisible = updateNavVisibility;
+		const updateVisibility = smallNavIsVisible === true ? false : true;
+		smallNavIsVisible = updateVisibility;
 	};
 
 	import { page } from '$app/stores';
+	import OpenProjectsButton from './OpenProjectsButton.svelte';
 
 	$: color =
 		$scrollValue >= 3466 && $scrollValue <= 4667 && $page.url.pathname === '/'
@@ -30,6 +31,7 @@
 	${$page.url.pathname == '/contact' && 'bg-[#f4f4f4]'}
 	`}
 >
+	<!-- Default Header XL -->
 	<nav id="xlNavbar" class={`hidden xl:flex z-lg relative items-center justify-between w-[90%]`}>
 		<a class="flex-[0.2]" href="/"><h4 class="text-2xl font-bold font-sans">BASIC/DEPT®</h4></a>
 
@@ -120,26 +122,36 @@
 			</li>
 		</ul>
 
-		<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 20 20"
-			><path
-				fill="currentColor"
-				d="M14 10.25a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0Zm-5 0a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0Zm-5 0a1.249 1.249 0 1 1 2.5 0a1.25 1.25 0 1 1-2.5 0Z"
-			/></svg
-		>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+		<OpenProjectsButton />
 	</nav>
-	{#if smallNavIsVisible === false}
-	<nav
-		id="lowerThanXlResolutions"
-		class={`flex z-lg relative items-center justify-between px-[5%] w-[100%] m-auto transition-all duration-500 ${$headerStyle} block xl:hidden z-[110] h-[80px]`}
-	>
-		<a class={` flex-[0.2]`} href="/">
-			<span class="text-2xl font-bold font-sans">BASIC/DEPT®</span>
-		</a>
 
-		<button on:click={handleNavVisibility} class="text-xl">MENU </button>
-	</nav>
+	<!-- Header for smaller than XL resolutions -->
+	{#if smallNavIsVisible === false}
+		<nav
+			id="lowerThanXlResolutions"
+			class={`flex z-lg relative items-center justify-between px-[5%] w-[100%] m-auto transition-all duration-500  xl:hidden z-[110] h-[80px]
+			${$page.url.pathname == '/' && `${$headerStyle}`}
+	 ${$page.url.pathname == '/work' && 'bg-[#f4f4f4]'} 
+	 ${$page.url.pathname == '/about' && 'bg-[#252422ff] text-[#f9cdcd]'}
+	 
+	 ${$page.url.pathname == '/news' && 'bg-[#f4f4f4]'}
+	${$page.url.pathname == '/thinking' && 'bg-[#252422ff] text-[#f9cdcd]'}
+	${$page.url.pathname == '/careers' && 'bg-[#252422ff] text-[#f9cdcd]'}
+	${$page.url.pathname == '/contact' && 'bg-[#f4f4f4]'}
+	
+			`}
+		>
+			<a class={` flex-[0.2]`} href="/">
+				<span class="text-2xl font-bold font-sans">BASIC/DEPT®</span>
+			</a>
+
+			<button on:click={handleNavVisibility} class="text-xl">MENU </button>
+		</nav>
 	{/if}
 
+	<!-- Default Menu for smaller than XL resolutions -->
 	{#if smallNavIsVisible === true}
 		<nav
 			class={`flex xl:hidden justify-start text-lg absolute h-[100vh] bg-[#262420] w-full items-start p-12 z-[100] transition-all`}
@@ -173,16 +185,16 @@
 					<a on:click={handleNavVisibility} href="/about">ABOUT</a>
 				</li>
 				<li aria-current={$page.url.pathname.startsWith('/news') ? 'page' : undefined}>
-					<a href="/news">NEWS</a>
+					<a on:click={handleNavVisibility} href="/news">NEWS</a>
 				</li>
 				<li aria-current={$page.url.pathname.startsWith('/thinking') ? 'page' : undefined}>
-					<a href="/thinking">THINKING</a>
+					<a on:click={handleNavVisibility} href="/thinking">THINKING</a>
 				</li>
 				<li aria-current={$page.url.pathname.startsWith('/careers') ? 'page' : undefined}>
-					<a href="/careers">CAREERS</a>
+					<a on:click={handleNavVisibility} href="/careers">CAREERS</a>
 				</li>
 				<li aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>
-					<a href="/contact">CONTACT</a>
+					<a on:click={handleNavVisibility} href="/contact">CONTACT</a>
 				</li>
 			</ul>
 		</nav>
