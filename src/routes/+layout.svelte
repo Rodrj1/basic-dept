@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ADHDFriendlyMode, projectColletionIsOpen } from '../store';
+	import { ADHDFriendlyMode } from '../store';
 
 	import AccesibilityMenu from './AccesibilityMenu.svelte';
 	import Header from './Header.svelte';
@@ -35,7 +35,7 @@
 </script>
 
 <div
-	on:mousemove={ADHDFriendlyMode ? updatePosition : null}
+	on:mousemove={$ADHDFriendlyMode ? updatePosition : null}
 	id="status"
 	role="status"
 	class={`flex flex-col h-auto 
