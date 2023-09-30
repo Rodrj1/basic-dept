@@ -4,9 +4,9 @@
 	import AccesibilityMenu from './AccesibilityMenu.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
-
-	import './styles.css';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import './styles.css';
 
 	let firstOpacity: HTMLElement | null;
 	let secondOpacity: HTMLElement | null;
@@ -30,7 +30,6 @@
 		}
 	};
 
-	import { page } from '$app/stores';
 	import ProjectCollection from './ProjectCollection.svelte';
 </script>
 
@@ -55,9 +54,9 @@
 	</main>
 
 	{#if $ADHDFriendlyMode}
-		<div id="firstOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0`} />
+		<div id="firstOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0 h-[45vh]`} />
 
-		<div id="secondOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[50000] bottom-0`} />
+		<div id="secondOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[50000] bottom-0 h-[45vh]`} />
 	{/if}
 
 	<AccesibilityMenu />
