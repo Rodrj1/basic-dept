@@ -15,6 +15,17 @@
 	}
 }
 
+@layer utilities {
+.themeMain {
+	@apply bg-[#f4f4f4] !text-black
+ }
+
+ .themeDark {
+	@apply bg-[#252422ff] !text-[#f9cdcd]
+ }
+
+}
+
 :root {
 	font-family: sans-serif;
 	overflow-x: hidden;
@@ -94,3 +105,21 @@ button:focus:not(:focus-visible) {
 	user-select: none;
 	pointer-events: none;
 }
+
+#featuredEngagements::-webkit-scrollbar {
+	width: 0.6em;
+	height: 0.4em;
+  }
+  
+  #featuredEngagements::-webkit-scrollbar-track {
+	background: #f4f4f4;
+  }
+  
+  #featuredEngagements::-webkit-scrollbar-thumb {
+	background: black;
+  }
+  
+  #featuredEngagements::-webkit-scrollbar-thumb:hover {
+	width: 2em;
+	background: gray;
+  }

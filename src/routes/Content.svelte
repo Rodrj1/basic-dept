@@ -3,9 +3,27 @@
 	import { onMount } from 'svelte';
 	import FeaturedNew from '../components/FeaturedNew.svelte';
 	import { scrollValue } from '../store';
+	import gsap from 'gsap';
+	import { toggleTheme } from '$lib/utils/toggleTheme';
 
 	onMount(() => {
 		document.body.addEventListener('wheel', checkScrollDirection);
+
+		const main = document.getElementById('content');
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.to('.scrollTrigger', {
+			duration: 2,
+			scrollTrigger: {
+				trigger: '.scrollTrigger',
+				start: 'top center',
+				onEnter: () => toggleTheme(main, 'Dark'),
+				onLeave: () => toggleTheme(main, 'Main'),
+				onEnterBack: () => toggleTheme(main, 'Dark'),
+				onLeaveBack: () => toggleTheme(main, 'Main'),
+			}
+		});
 
 		let headerElement = document.getElementById('header');
 
@@ -28,13 +46,7 @@
 	});
 </script>
 
-<div
-	class={`transition-colors duration-[500ms] ${
-		$scrollValue >= 3466 && $scrollValue <= 4667
-			? 'bg-[#252422ff] text-[#f9cdcd]'
-			: 'bg-[#f4f4f4] text-black'
-	}`}
->
+<div id="content" class={`transition-colors duration-[500ms]`}>
 	<section class="w-full flex flex-col gap-10">
 		<div
 			class="flex flex-col sm:flex-row justify-between items-center border-t border-t-black w-[90%] m-auto gap-5 xl:gap-52 pt-20"
@@ -137,6 +149,7 @@
 
 	<section class="w-full mt-20 md:mt-40">
 		<div
+			id="featuredEngagements"
 			class="flex gap-10 justify-between h-auto lg:h-[60vh] w-[90%] m-auto overflow-x-auto overflow-y-hidden"
 		>
 			<div class="flex flex-col items-start flex-1 min-w-[450px] justify-between h-[50%]">
@@ -150,7 +163,7 @@
 
 				<h2 class="font-bold text-xl mb-5">GOOGLE</h2>
 
-				<span class="text-base text-zinc-700 font-sans font-medium"
+				<span class="text-base font-sans font-normal"
 					>Our embedded partnership with Google is as deep as it gets. We're the lead creative
 					agency for Google Store and provide stragey, design, and prototyping to other divisions.
 					Learn more about or partnership here.</span
@@ -169,7 +182,7 @@
 
 					<h2 class="font-bold text-xl mb-5">KFC</h2>
 
-					<span class="text-base text-zinc-700 font-sans font-medium"
+					<span class="text-base font-sans font-normal"
 						>An award-winning global, digital transformation engagement spanning eCommerce, mobile
 						app, and new drive thru experiences. Bringing KFC's brand story to life while making it
 						easier for customers to buy chicken. Learn more about our partnership here.</span
@@ -189,7 +202,7 @@
 
 					<h2 class="font-bold text-xl mb-5">WILSON</h2>
 
-					<span class="text-base text-zinc-700 font-sans font-medium"
+					<span class="text-base font-sans font-normal"
 						>A reimagining of Wilson's brand visual identity, and brand campaign, to support a new
 						product drop and the launch of the first brick and mortar retail location in ther
 						brand's 108-year history. Read our full case study here.</span
@@ -209,7 +222,7 @@
 
 					<h2 class="font-bold text-xl mb-5">AT&T</h2>
 
-					<span class="text-base text-zinc-700 font-sans font-medium"
+					<span class="text-base font-sans font-normal"
 						>Redesigning the digital flagship for the largest telcommunications company in the
 						world. Creating frictionless paths to purchase for a wide range of consumers across a
 						vast portfolio of products and services.</span
@@ -229,7 +242,7 @@
 
 					<h2 class="font-bold text-xl mb-5">PATAGONIA</h2>
 
-					<span class="text-base text-zinc-700 font-sans font-medium"
+					<span class="text-base font-sans font-normal"
 						>Ongoing partnership providing strategy, branding, experience design, and development
 						focused on bringing their mission and offerings to consumers through brand-led programs
 						and platforms. Read our full case study here.</span
@@ -239,7 +252,7 @@
 		</div>
 	</section>
 
-	<section class="w-full">
+	<section class="w-full scrollTrigger">
 		<div
 			class="w-[90%] m-auto flex flex-col-reverse lg:flex-row relative justify-end items-start lg:items-center xl:items-start border-t border-t-black lg:py-20 gap-5 sm:gap-0 pt-20"
 		>
