@@ -8,25 +8,20 @@
 	import { page } from '$app/stores';
 	import './styles.css';
 
-	let firstOpacity: HTMLElement | null;
-	let secondOpacity: HTMLElement | null;
-
-	onMount(() => {
-		firstOpacity = document.getElementById('firstOpacity');
-		secondOpacity = document.getElementById('secondOpacity');
-	});
-
 	const updatePosition = (
 		event: MouseEvent & {
 			currentTarget: EventTarget & HTMLDivElement;
 		}
 	) => {
-		if (firstOpacity && secondOpacity) {
+		let topBackground = document.getElementById('topBackground');
+		let bottomBackground = document.getElementById('bottomBackground');
+
+		if (topBackground && bottomBackground) {
 			let mouseY = event.clientY - 60;
 			let windowHeight = window.innerHeight;
 
-			firstOpacity.style.height = mouseY + 'px';
-			secondOpacity.style.height = windowHeight - mouseY - 120 + 'px';
+			topBackground.style.height = mouseY + 'px';
+			bottomBackground.style.height = windowHeight - mouseY - 120 + 'px';
 		}
 	};
 
@@ -54,9 +49,12 @@
 	</main>
 
 	{#if $ADHDFriendlyMode}
-		<div id="firstOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0 h-[45vh]`} />
+		<div id="topBackground" class={`bg-black bg-opacity-40 w-full fixed z-[60000] top-0 h-[45vh]`} />
 
-		<div id="secondOpacity" class={`bg-black bg-opacity-40 w-full fixed z-[50000] bottom-0 h-[45vh]`} />
+		<div
+			id="bottomBackground"
+			class={`bg-black bg-opacity-40 w-full fixed z-[50000] bottom-0 h-[45vh]`}
+		/>
 	{/if}
 
 	<AccesibilityMenu />
