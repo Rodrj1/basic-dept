@@ -12,10 +12,10 @@
 			if ($scrollValue < 800) {
 				if (hasOpacity) headerStyle.set('group bg-transparent text-white opacity-0');
 				else headerStyle.set('group bg-transparent text-white opacity-100');
-			} else if ($scrollValue >= 800 && $scrollValue < 3466) {
+			} else if ($scrollValue >= 800 && $scrollValue < 3519) {
 				if (hasOpacity) headerStyle.set('group bg-[#f4f4f4] text-black opacity-0');
 				else headerStyle.set('group bg-[#f4f4f4] text-black opacity-100');
-			} else if ($scrollValue >= 3466 && $scrollValue <= 4667) {
+			} else if ($scrollValue >= 3519 && $scrollValue <= 4610) {
 				if (hasOpacity) headerStyle.set('group bg-[#252422ff] text-[#f9cdcd] opacity-0');
 				else headerStyle.set('group bg-[#252422ff] text-[#f9cdcd]  opacity-100');
 			} else {

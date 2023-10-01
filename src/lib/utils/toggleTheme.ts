@@ -5,7 +5,7 @@ export const toggleTheme = (main: HTMLElement | null, toggle: 'Dark' | 'Main') =
 			main.classList.add('themeDark');
 		}
 
-		if (toggle === 'Main') {
+		else if (toggle === 'Main') {
 			main.classList.remove('themeDark');
 			main.classList.add('themeMain');
 		}

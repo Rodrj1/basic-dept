@@ -17,11 +17,11 @@
 			duration: 2,
 			scrollTrigger: {
 				trigger: '.scrollTrigger',
-				start: 'top center',
+				start: '35% center',
 				onEnter: () => toggleTheme(main, 'Dark'),
 				onLeave: () => toggleTheme(main, 'Main'),
 				onEnterBack: () => toggleTheme(main, 'Dark'),
-				onLeaveBack: () => toggleTheme(main, 'Main'),
+				onLeaveBack: () => toggleTheme(main, 'Main')
 			}
 		});
 
